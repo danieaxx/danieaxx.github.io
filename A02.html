@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sony WH-1000XM5 | Responsive Portfolio</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-black: #000000;
+            --warm-pink: #d9b8b8;
+            --text-white: #ffffff;
+        }
+
+        body {
+            background-color: var(--bg-black);
+            color: var(--text-white);
+            font-family: 'Inter', sans-serif;
+            padding: 20px;
+        }
+
+        /* Container Border like your design */
+        .portfolio-border {
+            border: 1px solid #333;
+            padding: 30px;
+            margin-top: 20px;
+        }
+
+        /* Hero Text */
+        .hero-title {
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            font-weight: 800;
+            font-style: italic;
+            line-height: 1;
+        }
+
+        /* Button Styling */
+        .btn-shop {
+            background-color: var(--warm-pink);
+            color: #000;
+            border-radius: 0;
+            font-weight: bold;
+            padding: 10px 30px;
+            border: none;
+        }
+
+        /* Image styling */
+        .sony-img {
+            max-width: 100%;
+            height: auto;
+            transform: rotate(-10deg);
+            filter: drop-shadow(0 20px 40px rgba(217, 184, 184, 0.15));
+        }
+
+        /* --- RESPONSIVE TECH SPECS --- */
+        .spec-card {
+            background-color: var(--warm-pink);
+            color: #000;
+            padding: 20px;
+            border-radius: 4px;
+            height: 100%; /* Ensures all boxes are the same height in a row */
+            transition: transform 0.3s ease;
+        }
+
+        .spec-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .spec-card h4 {
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .spec-card p {
+            font-size: 0.9rem;
+            line-height: 1.4;
+            margin: 0;
+        }
+
+        /* Responsive spacing for Mobile */
+        @media (max-width: 768px) {
+            .hero-title { text-align: center; }
+            .sony-img { transform: rotate(0); margin: 30px 0; }
+            .portfolio-border { padding: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container portfolio-border">
+    <header class="d-flex justify-content-between align-items-center mb-5">
+        <div>
+            <h2 class="h4 mb-0 fw-bold">SONY</h2>
+            <small class="text-secondary">Sony WH-1000XM5</small>
+        </div>
+        <div class="d-flex align-items-center gap-3">
+            <span class="fw-bold">Buy Now</span>
+            <div style="width: 20px; height: 30px; border: 2px solid var(--warm-pink); border-radius: 4px;"></div>
+        </div>
+    </header>
+
+    <div class="row align-items-center mb-5">
+        <div class="col-lg-7 text-center text-lg-start">
+            <h1 class="hero-title mb-4">Sound,<br>Reimagined.</h1>
+            <p class="mb-4 text-secondary" style="max-width: 500px; margin: 0 auto 20px auto;">
+                Experience industry-leading noise cancellation and breathtaking audio quality in a refined, "noiseless" design.
+            </p>
+            <button class="btn btn-shop">Shop Now</button>
+        </div>
+        <div class="col-lg-5 text-center">
+    <img src="sony.jpeg" alt="Sony WH-1000XM5" class="sony-img img-fluid">
+</div>
+        </div>
+    </div>
+
+    <div class="specs-wrapper">
+        <h3 class="h4 mb-4 fw-light">Tech Specs</h3>
+        
+        <div class="row g-4 row-cols-1 row-cols-md-3">
+            <div class="col">
+                <div class="spec-card">
+                    <h4>🔋 30 - Hour Battery</h4>
+                    <p>All-day power for your longest journeys. Fast charging gives you 3 hours in just 3 minutes.</p>
+                </div>
+            </div>
+            
+            <div class="col">
+                <div class="spec-card">
+                    <h4>⚙️ Auto NC Optimizer</h4>
+                    <p>Uses 8 microphones and two processors to automatically cancel out city noise and airplane hum.</p>
+                </div>
+            </div>
+            
+            <div class="col">
+                <div class="spec-card">
+                    <h4>🎵 Premium High-Res</h4>
+                    <p>Real-time upscaling for studio-quality sound and a rich, "smoky" profile for audiophiles.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
