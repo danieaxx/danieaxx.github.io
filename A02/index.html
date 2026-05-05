@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio | IT Diploma</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-pink: #d87093; /* Warm Dusty Rose */
+            --light-pink: #fff0f5;   /* Lavender Blush (very soft pink) */
+            --accent-pink: #bc4b70;  /* Slightly deeper for contrast */
+        }
+
+        .hero-section {
+            background-color: var(--primary-pink);
+            color: white;
+            padding: 80px 0;
+        }
+
+        .profile-img-container {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 20px;
+            border: 5px solid white;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .profile-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Timeline styling with Pink accents */
+        .timeline {
+            border-left: 4px solid var(--primary-pink);
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 40px;
+        }
+
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            left: -32px;
+            top: 5px;
+            width: 20px;
+            height: 20px;
+            background-color: var(--primary-pink);
+            border: 4px solid white;
+            border-radius: 50%;
+        }
+
+        /* Custom utility classes to override Bootstrap Blue */
+        .text-pink { color: var(--primary-pink) !important; }
+        .bg-warm-pink { background-color: var(--light-pink) !important; }
+        
+        .card {
+            border: none !important;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            background-color: var(--light-pink) !important;
+        }
+
+        .btn-custom {
+            background-color: white;
+            color: var(--primary-pink);
+            border-radius: 50px;
+            font-weight: bold;
+        }
+
+        .btn-custom:hover {
+            background-color: var(--light-pink);
+            color: var(--accent-pink);
+        }
+    </style>
+</head>
+<body class="bg-light">
+
+    <header class="hero-section text-center">
+        <div class="container">
+            <div class="profile-img-container">
+                <img src="profiledani.jpg" alt="My Profile Photo">
+            </div>
+            <h1 class="display-4 fw-bold">Daniela G. Aponesto</h1>
+            <p class="lead opacity-75">Diploma in Information Technology</p>
+            
+            <div class="mt-4">
+                <a href="#" class="btn btn-custom btn-lg px-4 me-2 shadow-sm">GitHub</a>
+                <a href="#" class="btn btn-outline-light btn-lg rounded-pill px-4 fw-bold shadow-sm">LinkedIn</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8 text-center">
+                <h2 class="mb-4 text-pink">👤 About You</h2>
+                <p class="text-muted fs-5 fst-italic">
+                    "I am a dedicated student"
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-white py-5 border-top border-bottom">
+        <div class="container">
+            <h2 class="text-center mb-5 text-pink fw-bold">🛠️ Skills & Technologies</h2>
+            <div class="row g-4 text-center">
+                <div class="col-md-4">
+                    <div class="card h-100 bg-light p-4 shadow-sm">
+                        <i class="fa-brands fa-java fa-3x text-pink mb-3"></i>
+                        <h3 class="h5 fw-bold">Java</h3>
+                        <p class="text-secondary small">Programming & Object-Oriented Logic</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 bg-light p-4 shadow-sm">
+                        <i class="fa-solid fa-database fa-3x text-pink mb-3"></i>
+                        <h3 class="h5 fw-bold">SQL</h3>
+                        <p class="text-secondary small">Relational Database & Schema Design</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 bg-light p-4 shadow-sm">
+                        <i class="fa-solid fa-network-wired fa-3x text-pink mb-3"></i>
+                        <h3 class="h5 fw-bold">Networking</h3>
+                        <p class="text-secondary small">Star-Bus Hybrid Infrastructure</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container py-5">
+        <h2 class="text-center mb-5 fw-bold text-pink">📈 Projects & Experience</h2>
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h3 class="h5 fw-bold">Database Schema Mapping</h3>
+                        <p class="text-pink fw-semibold small mb-1">Academic Project | March 2026</p>
+                        <p class="text-muted">Finalizing relational tables and attribute mapping for department systems.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h3 class="h5 fw-bold">Network Research Lead</h3>
+                        <p class="text-pink fw-semibold small mb-1">Sto. Tomas Project | Jan 2026</p>
+                        <p class="text-muted">Proposed a hybrid topology solution using Fiber Optic and Cat6a cabling.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h3 class="h5 fw-bold">LumosLearning.hub</h3>
+                        <p class="text-pink fw-semibold small mb-1">E-Learning Platform | Dec 2025</p>
+                        <p class="text-muted">Developed a project to help students manage academic pressure and stay organized.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="text-center py-5 text-secondary small bg-white border-top">
+        <p>&copy; 2026 | Diploma in IT Portfolio</p>
+        <p>Built with ❤️ on a Tablet</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
