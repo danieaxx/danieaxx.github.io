@@ -22,7 +22,7 @@
       --nav-bg: rgba(15, 12, 41, 0.8);
     }
 
-    /* Light Mode Variables */
+    
     body.light-mode {
       --magic-gradient: linear-gradient(to right, #e0eafc, #cfdef3);
       --text-main: #24243e;
@@ -62,7 +62,7 @@
       color: var(--text-main) !important;
     }
 
-    /* Toggle Button */
+    
     #themeToggle {
       background: var(--glass);
       border: 1px solid var(--gold);
@@ -74,7 +74,7 @@
       transition: 0.3s;
     }
 
-    /* Glassmorphism Cards */
+  
     .card { 
       background: var(--card-bg);
       backdrop-filter: blur(10px);
@@ -110,7 +110,7 @@
       filter: sepia(10%) brightness(95%);
     }
 
-    /* Sleek UI Buttons */
+    
     .btn-magic {
       background: transparent;
       color: var(--gold);
@@ -206,7 +206,7 @@
       return str.split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1).toLowerCase()).join(' ');
     }
 
-    // Toggle Functionality
+  
     function toggleMode() {
       const body = document.body;
       const icon = document.getElementById('themeIcon');
@@ -292,7 +292,7 @@
       filter: sepia(0%) brightness(110%);
     }
 
-    /* Sleek UI Buttons */
+    
     .btn-magic {
       background: transparent;
       color: var(--gold);
@@ -349,7 +349,7 @@
         </div>
       </aside>
 
-      <!-- Results Section -->
+      
       <main class="col-12 col-md-8 col-lg-9">
         <div id="character-grid" class="row row-cols-2 row-cols-lg-3 g-4">
           <div class="col-12 text-center py-5">
@@ -360,7 +360,7 @@
     </div>
   </div>
 
-  <!-- Detail Modal - Optimized for Tablet -->
+  
   <div class="modal fade" id="hpModal" tabindex="-1">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content border-0 shadow-lg" style="background: #111; border-radius: 25px; overflow: hidden;">
@@ -378,7 +378,7 @@
     let allChars = [];
     let modalObj;
 
-    // Helper for proper casing (as per your request)
+  
     function toPascal(str) {
       if (!str) return 'N/A';
       return str.split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1).toLowerCase()).join(' ');
