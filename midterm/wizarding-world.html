@@ -1,241 +1,215 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Wizarding World | Developer Portfolio 🪄</title>
-  
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daniela G. Aponesto | Portfolio</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-pink: #d87093; /* Warm Dusty Rose */
+            --light-pink: #fff0f5;   /* Lavender Blush */
+            --accent-pink: #bc4b70;  /* Deeper Pink */
+        }
 
-  <style>
-    :root { 
-      --magic-deep: #0f0c29;
-      --magic-gradient: linear-gradient(to right, #0f0c29, #302b63, #24243e);
-      --wizard-purple: #63437c; 
-      --gold: #f1c40f; 
-      --glass: rgba(255, 255, 255, 0.03);
-    }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fcfcfc;
+        }
 
-    body { 
-      background: var(--magic-gradient);
-      color: #ffffff;
-      min-height: 100vh;
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      overflow-x: hidden;
-    }
+        .hero-section {
+            background-color: var(--primary-pink);
+            color: white;
+            padding: 80px 0;
+        }
 
-    /* Custom Background Particles - Makes it look manual */
-    .bg-animation {
-      position: fixed;
-      top: 0; left: 0; width: 100%; height: 100%;
-      z-index: -1;
-      background: radial-gradient(circle at 50% 50%, rgba(100, 50, 150, 0.1) 0%, transparent 80%);
-    }
+        .profile-img-container {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 20px;
+            border: 5px solid white;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
 
-    /* Refined Navbar */
-    .navbar { 
-      background: rgba(15, 12, 41, 0.8) !important;
-      backdrop-filter: blur(15px);
-      border-bottom: 1px solid rgba(241, 196, 15, 0.3);
-      padding: 1rem 0;
-    }
+        .profile-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
 
-    .navbar-brand {
-      letter-spacing: 2px;
-      font-size: 1.2rem;
-      text-transform: uppercase;
-    }
+        .text-pink { color: var(--primary-pink) !important; }
+        
+        .card {
+            border: none !important;
+            transition: 0.3s ease;
+            border-radius: 15px;
+            background: white;
+        }
 
-    /* Glassmorphism Cards */
-    .card { 
-      background: var(--glass);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 20px;
-      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-      height: 100%;
-    }
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+        }
 
-    .card:hover { 
-      transform: translateY(-12px);
-      border-color: var(--gold);
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), 0 0 15px rgba(241, 196, 15, 0.2);
-      background: rgba(255, 255, 255, 0.07);
-    }
+        .btn-project {
+            background-color: var(--primary-pink);
+            color: white;
+            border-radius: 10px;
+            font-weight: bold;
+            transition: 0.3s;
+            border: none;
+        }
 
-    .char-name {
-      color: #ffffff !important;
-      font-weight: 500;
-      letter-spacing: 0.5px;
-      margin-top: 10px;
-    }
+        .btn-project:hover {
+            background-color: var(--accent-pink);
+            color: white;
+        }
 
-    .char-img { 
-      height: 220px; 
-      object-fit: cover; 
-      border-radius: 20px 20px 0 0;
-      width: 100%;
-      transition: 0.5s ease;
-      filter: sepia(20%) brightness(90%);
-    }
+        .timeline {
+            border-left: 4px solid var(--primary-pink);
+            padding-left: 20px;
+            position: relative;
+        }
 
-    .card:hover .char-img {
-      filter: sepia(0%) brightness(110%);
-    }
+        .timeline-item {
+            position: relative;
+            margin-bottom: 40px;
+        }
 
-    /* Sleek UI Buttons */
-    .btn-magic {
-      background: transparent;
-      color: var(--gold);
-      border: 1px solid var(--gold);
-      border-radius: 30px;
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      transition: 0.3s;
-    }
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            left: -32px;
+            top: 5px;
+            width: 20px;
+            height: 20px;
+            background-color: var(--primary-pink);
+            border: 4px solid white;
+            border-radius: 50%;
+        }
 
-    .btn-magic:hover {
-      background: var(--gold);
-      color: #000;
-      box-shadow: 0 0 15px var(--gold);
-    }
+        .btn-custom {
+            background-color: white;
+            color: var(--primary-pink);
+            border-radius: 50px;
+            font-weight: bold;
+        }
 
-    .form-control {
-      border-radius: 30px;
-      padding: 0.6rem 1.2rem;
-      border: 1px solid rgba(255,255,255,0.1);
-    }
-
-    @media (min-width: 768px) {
-      .sticky-sidebar { position: sticky; top: 100px; }
-    }
-  </style>
+        .btn-custom:hover {
+            background-color: var(--light-pink);
+            color: var(--accent-pink);
+        }
+    </style>
 </head>
-<body>
+<body class="bg-light">
 
-  <div class="bg-animation"></div>
-
-  <nav class="navbar navbar-dark sticky-top shadow-sm">
-    <div class="container">
-      <span class="navbar-brand fw-bold">🪄 Wizarding <span style="color: var(--gold);">World</span></span>
-    </div>
-  </nav>
-
-  <div class="container my-5">
-    <div class="row">
-      <!-- Custom Sidebar Navigation -->
-      <aside class="col-12 col-md-4 col-lg-3 mb-4">
-        <div class="card p-4 sticky-sidebar">
-          <h6 class="text-uppercase fw-bold mb-4" style="color: var(--gold); font-size: 0.8rem;">Explore the Magic</h6>
-          <input type="text" id="mainSearch" class="form-control mb-4 bg-dark text-white shadow-none" placeholder="Search name...">
-          
-          <div class="d-grid gap-2">
-            <button class="btn btn-sm btn-magic text-start ps-3" onclick="filterByHouse('all')">All Classes</button>
-            <button class="btn btn-sm btn-magic text-start ps-3" onclick="filterByHouse('gryffindor')">Gryffindor</button>
-            <button class="btn btn-sm btn-magic text-start ps-3" onclick="filterByHouse('slytherin')">Slytherin</button>
-            <button class="btn btn-sm btn-magic text-start ps-3" onclick="filterByHouse('ravenclaw')">Ravenclaw</button>
-            <button class="btn btn-sm btn-magic text-start ps-3" onclick="filterByHouse('hufflepuff')">Hufflepuff</button>
-          </div>
-        </div>
-      </aside>
-
-      <!-- Results Section -->
-      <main class="col-12 col-md-8 col-lg-9">
-        <div id="character-grid" class="row row-cols-2 row-cols-lg-3 g-4">
-          <div class="col-12 text-center py-5">
-            <div class="spinner-grow text-warning" role="status"></div>
-          </div>
-        </div>
-      </main>
-    </div>
-  </div>
-
-  <!-- Detail Modal - Optimized for Tablet -->
-  <div class="modal fade" id="hpModal" tabindex="-1">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content border-0 shadow-lg" style="background: #111; border-radius: 25px; overflow: hidden;">
-        <div class="modal-body p-0">
-          <div id="mBody"></div>
-          <div class="p-4 text-center">
-             <button type="button" class="btn btn-magic px-5" data-bs-dismiss="modal">Close Profile</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <script>
-    let allChars = [];
-    let modalObj;
-
-    // Helper for proper casing (as per your request)
-    function toPascal(str) {
-      if (!str) return 'N/A';
-      return str.split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1).toLowerCase()).join(' ');
-    }
-
-    window.onload = async () => {
-      modalObj = new bootstrap.Modal(document.getElementById('hpModal'));
-      try {
-        const res = await fetch('https://hp-api.onrender.com/api/characters');
-        const data = await res.json();
-        allChars = data.filter(c => c.image); // Only keep those with photos
-        renderChars(allChars.slice(0, 18));
-      } catch (e) {
-        console.error("The spell failed:", e);
-      }
-    };
-
-    function renderChars(list) {
-      const grid = document.getElementById('character-grid');
-      grid.innerHTML = '';
-      list.forEach(c => {
-        grid.innerHTML += `
-          <div class="col">
-            <div class="card" onclick="viewChar('${c.id}')">
-              <img src="${c.image}" class="char-img">
-              <div class="card-body text-center p-3">
-                <p class="char-name mb-0">${c.name}</p>
-                <span class="small opacity-50" style="font-size: 0.65rem;">${toPascal(c.house)}</span>
-              </div>
+    <header class="hero-section text-center shadow-sm">
+        <div class="container">
+            <div class="profile-img-container">
+                <img src="profiledani.jpg" alt="Daniela Aponesto">
             </div>
-          </div>`;
-      });
-    }
-
-    function viewChar(id) {
-      const c = allChars.find(char => char.id === id);
-      document.getElementById('mBody').innerHTML = `
-        <div class="position-relative">
-          <img src="${c.image}" class="img-fluid w-100" style="height: 400px; object-fit: cover;">
-          <div class="position-absolute bottom-0 start-0 w-100 p-4" style="background: linear-gradient(transparent, #111);">
-            <h3 class="fw-bold text-white mb-0">${c.name}</h3>
-            <p class="text-warning small mb-0">${toPascal(c.house)} House</p>
-          </div>
+            <h1 class="display-4 fw-bold">Daniela G. Aponesto</h1>
+            <p class="lead opacity-75">Diploma in Information Technology</p>
+            
+            <div class="mt-4">
+                <a href="https://github.com/danieaxx" class="btn btn-custom btn-lg px-4 me-2 shadow-sm">GitHub</a>
+                <a href="#" class="btn btn-outline-light btn-lg rounded-pill px-4 fw-bold shadow-sm">LinkedIn</a>
+            </div>
         </div>
-        <div class="px-4 pt-3 text-start">
-          <div class="row small opacity-75">
-            <div class="col-6 mb-2"><strong>Actor:</strong><br>${c.actor}</div>
-            <div class="col-6 mb-2"><strong>Patronus:</strong><br>${toPascal(c.patronus)}</div>
-            <div class="col-6"><strong>Wand:</strong><br>${toPascal(c.wand.wood)} Wood</div>
-            <div class="col-6"><strong>Status:</strong><br>${c.wizard ? 'Wizard' : 'Muggle'}</div>
-          </div>
-        </div>`;
-      modalObj.show();
-    }
+    </header>
 
-    function filterByHouse(house) {
-      const filtered = house === 'all' ? allChars : allChars.filter(c => c.house.toLowerCase() === house);
-      renderChars(filtered.slice(0, 18));
-    }
+    <section class="container py-5">
+        <h2 class="text-center mb-5 text-pink fw-bold">💻 Featured Projects</h2>
+        <div class="row g-4 justify-content-center">
+            
+            <div class="col-md-6 col-lg-5">
+                <div class="card h-100 shadow-sm p-3">
+                    <div class="card-body text-center">
+                        <div class="d-flex align-items-center justify-content-center mb-3">
+                            <i class="fa-solid fa-headphones fa-2x text-pink me-3"></i>
+                            <h5 class="fw-bold mb-0">Sony WH-1000XM5</h5>
+                        </div>
+                        <p class="text-muted small">A professional landing page designed in Figma and built using Bootstrap. Focused on premium UI/UX aesthetics.</p>
+                        <a href="A02/A02.html" class="btn btn-project w-100 mt-2">View Landing Page</a>
+                    </div>
+                </div>
+            </div>
 
-    document.getElementById('mainSearch').addEventListener('input', (e) => {
-      const term = e.target.value.toLowerCase();
-      const filtered = allChars.filter(c => c.name.toLowerCase().includes(term));
-      renderChars(filtered.slice(0, 18));
-    });
-  </script>
+            <div class="col-md-6 col-lg-5">
+                <div class="card h-100 shadow-sm p-3">
+                    <div class="card-body text-center">
+                        <div class="d-flex align-items-center justify-content-center mb-3">
+                            <i class="fa-solid fa-wand-sparkles fa-2x text-pink me-3"></i>
+                            <h5 class="fw-bold mb-0">Wizarding World API</h5>
+                        </div>
+                        <p class="text-muted small">A dynamic character directory fetching real-time data from a public JSON API with a custom theme toggle.</p>
+                        <a href="midterm/wizarding-world.html" class="btn btn-project w-100 mt-2">View Live Project</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="bg-white py-5 border-top border-bottom">
+        <div class="container">
+            <h2 class="text-center mb-5 text-pink fw-bold">🛠️ Skills & Technologies</h2>
+            <div class="row g-4 text-center">
+                <div class="col-md-4">
+                    <div class="card h-100 bg-light p-4 shadow-sm">
+                        <i class="fa-brands fa-java fa-3x text-pink mb-3"></i>
+                        <h3 class="h5 fw-bold">Java</h3>
+                        <p class="text-secondary small">Programming & Object-Oriented Logic</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 bg-light p-4 shadow-sm">
+                        <i class="fa-solid fa-database fa-3x text-pink mb-3"></i>
+                        <h3 class="h5 fw-bold">SQL</h3>
+                        <p class="text-secondary small">Relational Database & Schema Design</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 bg-light p-4 shadow-sm">
+                        <i class="fa-solid fa-network-wired fa-3x text-pink mb-3"></i>
+                        <h3 class="h5 fw-bold">Networking</h3>
+                        <p class="text-secondary small">Star-Bus Hybrid Infrastructure</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container py-5">
+        <h2 class="text-center mb-5 fw-bold text-pink">📈 Experience</h2>
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h3 class="h5 fw-bold">Database Schema Mapping</h3>
+                        <p class="text-pink fw-semibold small mb-1">Academic Project | March 2026</p>
+                        <p class="text-muted">Finalizing relational tables and attribute mapping for department systems.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h3 class="h5 fw-bold">Network Research Lead</h3>
+                        <p class="text-pink fw-semibold small mb-1">Sto. Tomas Project | Jan 2026</p>
+                        <p class="text-muted">Proposed a hybrid topology solution using Fiber Optic and Cat6a cabling.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="text-center py-5 text-secondary small bg-white border-top">
+        <p>&copy; 2026 | Daniela Aponesto - Diploma in IT Portfolio</p>
+        <p>Built with ❤️ on a Tablet</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
