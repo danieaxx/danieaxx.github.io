@@ -11,8 +11,8 @@
     <style>
         :root {
             --primary-pink: #d87093; /* Warm Dusty Rose */
-            --light-pink: #fff0f5;   /* Lavender Blush */
-            --accent-pink: #bc4b70;  /* Deeper contrast */
+            --light-pink: #fff0f5;   /* Lavender Blush (very soft pink) */
+            --accent-pink: #bc4b70;  /* Slightly deeper for contrast */
         }
 
         .hero-section {
@@ -37,6 +37,7 @@
             object-fit: cover;
         }
 
+        /* Timeline styling with Pink accents */
         .timeline {
             border-left: 4px solid var(--primary-pink);
             padding-left: 20px;
@@ -60,17 +61,18 @@
             border-radius: 50%;
         }
 
+        /* Custom utility classes to override Bootstrap Blue */
         .text-pink { color: var(--primary-pink) !important; }
+        .bg-warm-pink { background-color: var(--light-pink) !important; }
         
         .card {
             border: none !important;
             transition: 0.3s;
-            border-radius: 20px !important;
         }
 
         .card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05) !important;
+            background-color: var(--light-pink) !important;
         }
 
         .btn-custom {
@@ -80,18 +82,9 @@
             font-weight: bold;
         }
 
-        .btn-project {
-            background-color: var(--primary-pink);
-            color: white;
-            border-radius: 50px;
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .btn-project:hover {
-            background-color: var(--accent-pink);
-            color: white;
+        .btn-custom:hover {
+            background-color: var(--light-pink);
+            color: var(--accent-pink);
         }
     </style>
 </head>
@@ -100,7 +93,7 @@
     <header class="hero-section text-center">
         <div class="container">
             <div class="profile-img-container">
-                <img src="profiledani.jpg" alt="Daniela G. Aponesto">
+                <img src="profiledani.jpg" alt="My Profile Photo">
             </div>
             <h1 class="display-4 fw-bold">Daniela G. Aponesto</h1>
             <p class="lead opacity-75">Diploma in Information Technology</p>
@@ -113,48 +106,12 @@
     </header>
 
     <section class="container py-5">
-        <h2 class="text-center mb-5 text-pink fw-bold">🚀 Featured Projects</h2>
-        <div class="row g-4">
-            <!-- Wizarding World API -->
-            <div class="col-md-4">
-    <div class="card h-100 shadow-sm p-3">
-        <div class="card-body">
-            <div class="d-flex align-items-center mb-3">
-                <i class="fa-solid fa-wand-sparkles fa-2x text-pink me-3"></i>
-                <h5 class="fw-bold mb-0">Wizarding World API</h5>
-            </div>
-            <p class="text-muted small">A dynamic character directory utilizing a free public API with JSON return, built with Bootstrap.</p>
-            <a href="midterm/wizarding-world.html" class="btn btn-project w-100 mt-2">View Live Project</a>
-        </div>
-    </div>
-            </div>
-
-            <!-- Sony WH-1000XM5 -->
-            <div class="col-md-4">
-                <div class="card h-100 shadow-sm p-3">
-                    <div class="card-body">
-                        <div class="d-flex align-items-center mb-3">
-                            <i class="fa-solid fa-headphones fa-2x text-pink me-3"></i>
-                            <h5 class="fw-bold mb-0">Sony WH-1000XM5</h5>
-                        </div>
-                        <p class="text-muted small">A professional landing page designed in Figma and built using Bootstrap.</p>
-                        <a href="A02/A02.html" class="btn btn-project w-100 mt-2">View Landing Page</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Tech Care App -->
-            <div class="col-md-4">
-                <div class="card h-100 shadow-sm p-3">
-                    <div class="card-body">
-                        <div class="d-flex align-items-center mb-3">
-                            <i class="fa-solid fa-heart-pulse fa-2x text-pink me-3"></i>
-                            <h5 class="fw-bold mb-0">Tech Care App</h5>
-                        </div>
-                        <p class="text-muted small">A health and lifestyle tracking application concept for IT professionals.</p>
-                        <a href="#" class="btn btn-project w-100 mt-2">View Case Study</a>
-                    </div>
-                </div>
+        <div class="row justify-content-center">
+            <div class="col-md-8 text-center">
+                <h2 class="mb-4 text-pink">👤 About You</h2>
+                <p class="text-muted fs-5 fst-italic">
+                    "I am a dedicated student"
+                </p>
             </div>
         </div>
     </section>
@@ -189,24 +146,24 @@
     </section>
 
     <section class="container py-5">
-        <h2 class="text-center mb-5 fw-bold text-pink">📈 Experience Timeline</h2>
+        <h2 class="text-center mb-5 fw-bold text-pink">📈 Projects & Experience</h2>
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="timeline">
                     <div class="timeline-item">
                         <h3 class="h5 fw-bold">Database Schema Mapping</h3>
                         <p class="text-pink fw-semibold small mb-1">Academic Project | March 2026</p>
-                        <p class="text-muted">Finalizing relational tables and mapping for local systems.</p>
+                        <p class="text-muted">Finalizing relational tables and attribute mapping for department systems.</p>
                     </div>
                     <div class="timeline-item">
                         <h3 class="h5 fw-bold">Network Research Lead</h3>
                         <p class="text-pink fw-semibold small mb-1">Sto. Tomas Project | Jan 2026</p>
-                        <p class="text-muted">Proposed hybrid topology using Fiber Optic and Cat6a cabling.</p>
+                        <p class="text-muted">Proposed a hybrid topology solution using Fiber Optic and Cat6a cabling.</p>
                     </div>
                     <div class="timeline-item">
                         <h3 class="h5 fw-bold">LumosLearning.hub</h3>
                         <p class="text-pink fw-semibold small mb-1">E-Learning Platform | Dec 2025</p>
-                        <p class="text-muted">An organization tool to assist students with academic management.</p>
+                        <p class="text-muted">Developed a project to help students manage academic pressure and stay organized.</p>
                     </div>
                 </div>
             </div>
@@ -214,7 +171,7 @@
     </section>
 
     <footer class="text-center py-5 text-secondary small bg-white border-top">
-        <p>&copy; 2026 | Daniela G. Aponesto Portfolio</p>
+        <p>&copy; 2026 | Diploma in IT Portfolio</p>
         <p>Built with ❤️ on a Tablet</p>
     </footer>
 
