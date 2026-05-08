@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio | IT Diploma</title>
+    <title>Daniela Aponesto | IT Portfolio</title>
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -11,8 +11,12 @@
     <style>
         :root {
             --primary-pink: #d87093; /* Warm Dusty Rose */
-            --light-pink: #fff0f5;   /* Lavender Blush (very soft pink) */
-            --accent-pink: #bc4b70;  /* Slightly deeper for contrast */
+            --light-pink: #fff0f5;   /* Lavender Blush */
+            --accent-pink: #bc4b70;  /* Deeper Pink */
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
         }
 
         .hero-section {
@@ -37,7 +41,34 @@
             object-fit: cover;
         }
 
-        /* Timeline styling with Pink accents */
+        /* Project Card Styling */
+        .text-pink { color: var(--primary-pink) !important; }
+        
+        .card {
+            border: none !important;
+            transition: 0.3s ease;
+            border-radius: 15px;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+        }
+
+        .btn-project {
+            background-color: var(--primary-pink);
+            color: white;
+            border-radius: 10px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn-project:hover {
+            background-color: var(--accent-pink);
+            color: white;
+        }
+
+        /* Timeline styling */
         .timeline {
             border-left: 4px solid var(--primary-pink);
             padding-left: 20px;
@@ -61,13 +92,131 @@
             border-radius: 50%;
         }
 
-        /* Custom utility classes to override Bootstrap Blue */
-        .text-pink { color: var(--primary-pink) !important; }
-        .bg-warm-pink { background-color: var(--light-pink) !important; }
-        
-        .card {
-            border: none !important;
-            transition: 0.3s;
+        .btn-custom {
+            background-color: white;
+            color: var(--primary-pink);
+            border-radius: 50px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body class="bg-light">
+
+    <header class="hero-section text-center shadow-sm">
+        <div class="container">
+            <div class="profile-img-container">
+                <img src="profiledani.jpg" alt="Daniela Aponesto">
+            </div>
+            <h1 class="display-4 fw-bold">Daniela G. Aponesto</h1>
+            <p class="lead opacity-75">Diploma in Information Technology</p>
+            
+            <div class="mt-4">
+                <a href="https://github.com/danieaxx" class="btn btn-custom btn-lg px-4 me-2 shadow-sm">GitHub</a>
+                <a href="#" class="btn btn-outline-light btn-lg rounded-pill px-4 fw-bold shadow-sm">LinkedIn</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="container py-5">
+        <h2 class="text-center mb-5 text-pink fw-bold">💻 Featured Projects</h2>
+        <div class="row g-4">
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm p-3">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="fa-solid fa-headphones fa-2x text-pink me-3"></i>
+                            <h5 class="fw-bold mb-0">Sony WH-1000XM5</h5>
+                        </div>
+                        <p class="text-muted small">A professional landing page designed in Figma and built using Bootstrap. Focused on premium UI/UX aesthetics.</p>
+                        <a href="A02/A02.html" class="btn btn-project w-100 mt-2">View Landing Page</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm p-3">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="fa-solid fa-wand-sparkles fa-2x text-pink me-3"></i>
+                            <h5 class="fw-bold mb-0">Wizarding World API</h5>
+                        </div>
+                        <p class="text-muted small">A dynamic character directory fetching real-time data from a public JSON API with a custom theme toggle.</p>
+                        <a href="midterm/wizarding-world.html" class="btn btn-project w-100 mt-2">View Live Project</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm p-3 border-dashed bg-transparent" style="border: 2px dashed #ccc !important;">
+                    <div class="card-body d-flex flex-column justify-content-center align-items-center text-center opacity-50">
+                        <i class="fa-solid fa-plus fa-2x mb-3"></i>
+                        <h5 class="fw-bold">New Project</h5>
+                        <p class="small">Coming Soon</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="bg-white py-5 border-top border-bottom">
+        <div class="container">
+            <h2 class="text-center mb-5 text-pink fw-bold">🛠️ Skills & Technologies</h2>
+            <div class="row g-4 text-center">
+                <div class="col-md-4">
+                    <div class="card h-100 bg-light p-4 shadow-sm">
+                        <i class="fa-brands fa-java fa-3x text-pink mb-3"></i>
+                        <h3 class="h5 fw-bold">Java</h3>
+                        <p class="text-secondary small">Programming & Object-Oriented Logic</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 bg-light p-4 shadow-sm">
+                        <i class="fa-solid fa-database fa-3x text-pink mb-3"></i>
+                        <h3 class="h5 fw-bold">SQL</h3>
+                        <p class="text-secondary small">Relational Database & Schema Design</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 bg-light p-4 shadow-sm">
+                        <i class="fa-solid fa-network-wired fa-3x text-pink mb-3"></i>
+                        <h3 class="h5 fw-bold">Networking</h3>
+                        <p class="text-secondary small">Star-Bus Hybrid Infrastructure</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container py-5">
+        <h2 class="text-center mb-5 fw-bold text-pink">📈 Experience</h2>
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h3 class="h5 fw-bold">Database Schema Mapping</h3>
+                        <p class="text-pink fw-semibold small mb-1">Academic Project | March 2026</p>
+                        <p class="text-muted">Finalizing relational tables and attribute mapping for department systems.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h3 class="h5 fw-bold">Network Research Lead</h3>
+                        <p class="text-pink fw-semibold small mb-1">Sto. Tomas Project | Jan 2026</p>
+                        <p class="text-muted">Proposed a hybrid topology solution using Fiber Optic and Cat6a cabling.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="text-center py-5 text-secondary small bg-white border-top">
+        <p>&copy; 2026 | Daniela Aponesto - Diploma in IT Portfolio</p>
+        <p>Built with ❤️ on a Tablet</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>            transition: 0.3s;
         }
 
         .card:hover {
