@@ -19,8 +19,8 @@
             --accent-gold: #d4a373;
             --accent-hover: #faedcd;
             --text-light: #fefae0;
-            --text-muted: #b09e99;
-            --border-color: rgba(212, 163, 115, 0.2);
+            --text-muted: #d6ccc2;
+            --border-color: rgba(212, 163, 115, 0.25);
             --font-serif: 'Playfair Display', serif;
             --font-sans: 'Plus Jakarta Sans', sans-serif;
         }
@@ -30,6 +30,7 @@
             color: var(--text-light);
             font-family: var(--font-sans);
             overflow-x: hidden;
+            scroll-behavior: smooth;
         }
 
         h1, h2, h3, h4, .font-serif {
@@ -48,12 +49,13 @@
         }
 
         .nav-link {
-            color: var(--text-muted) !important;
+            color: var(--text-light) !important;
             font-size: 0.85rem;
             letter-spacing: 2px;
             text-transform: uppercase;
             margin-left: 20px;
             transition: 0.3s;
+            font-weight: 500;
         }
 
         .nav-link:hover, .nav-link.active {
@@ -63,7 +65,7 @@
         /* Hero Section */
         .hero-section {
             position: relative;
-            padding: 40px 0 80px;
+            padding: 80px 0 100px;
             min-height: 85vh;
             display: flex;
             align-items: center;
@@ -78,10 +80,11 @@
         }
 
         .hero-title {
-            font-size: 3.8rem;
+            font-size: 4.2rem;
             line-height: 1.15;
             margin: 20px 0 25px;
             font-weight: 400;
+            color: var(--text-light);
         }
 
         .hero-title span {
@@ -90,10 +93,12 @@
         }
 
         .hero-subtext {
-            color: var(--text-muted);
-            font-size: 1.05rem;
+            color: var(--text-light);
+            font-size: 1.15rem;
             margin-bottom: 35px;
-            max-width: 480px;
+            max-width: 600px;
+            line-height: 1.6;
+            opacity: 0.9;
         }
 
         .btn-gold {
@@ -121,7 +126,7 @@
             font-weight: 600;
             padding: 12px 28px;
             border-radius: 4px;
-            border: 1px solid var(--border-color);
+            border: 1px solid var(--accent-gold);
             transition: 0.3s;
             text-transform: uppercase;
             font-size: 0.8rem;
@@ -129,55 +134,14 @@
         }
 
         .btn-outline-gold:hover {
+            background-color: var(--accent-gold);
             border-color: var(--accent-gold);
-            color: var(--accent-gold);
-        }
-
-        /* Profile Image Container */
-        .hero-img-wrapper {
-            position: relative;
-            text-align: center;
-        }
-
-        .hero-img {
-            width: 100%;
-            max-width: 420px;
-            height: 540px;
-            object-fit: cover;
-            border-radius: 8px;
-            filter: brightness(0.9) contrast(1.05);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
-        }
-
-        /* Floating Stats Callout */
-        .stat-box {
-            text-align: right;
-            margin-bottom: 35px;
-        }
-
-        .stat-icon {
-            color: var(--accent-gold);
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-        }
-
-        .stat-number {
-            font-size: 2.8rem;
-            font-family: var(--font-serif);
-            color: var(--text-light);
-            line-height: 1;
-        }
-
-        .stat-label {
-            color: var(--text-muted);
-            font-size: 0.75rem;
-            letter-spacing: 1px;
-            text-transform: uppercase;
+            color: var(--bg-dark);
         }
 
         /* Hero Footer Contact Grid */
         .hero-footer {
-            margin-top: 60px;
+            margin-top: 80px;
             padding-top: 30px;
             border-top: 1px solid var(--border-color);
         }
@@ -205,14 +169,16 @@
             font-size: 0.7rem;
             letter-spacing: 1.5px;
             text-transform: uppercase;
-            color: var(--text-muted);
+            color: var(--accent-gold);
             margin-bottom: 2px;
+            font-weight: 600;
         }
 
         .info-detail {
             font-size: 0.85rem;
             color: var(--text-light);
             margin: 0;
+            font-weight: 500;
         }
 
         .info-detail a {
@@ -249,6 +215,8 @@
             object-fit: cover;
             border-radius: 8px;
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+            filter: brightness(0.9) contrast(1.05);
+            border: 1px solid var(--border-color);
         }
 
         .about-heading {
@@ -259,56 +227,195 @@
         }
 
         .about-text {
-            color: var(--text-muted);
-            font-size: 0.95rem;
+            color: var(--text-light);
+            font-size: 0.98rem;
             line-height: 1.8;
             margin-bottom: 20px;
+            opacity: 0.9;
         }
 
-        /* Accomplishments List */
-        .accomplishments-list {
-            list-style: none;
-            padding: 0;
-            margin-top: 35px;
+        /* Skills Section */
+        .skills-section {
+            padding: 100px 0;
+            background-color: var(--bg-dark);
             border-top: 1px solid var(--border-color);
-            padding-top: 25px;
         }
 
-        .accomplishments-list li {
+        .skill-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 30px;
+            height: 100%;
+            transition: 0.3s;
+        }
+
+        .skill-card:hover {
+            border-color: var(--accent-gold);
+            transform: translateY(-5px);
+        }
+
+        .skill-card h3 {
+            font-size: 1.2rem;
+            color: var(--accent-gold);
+            margin-bottom: 20px;
             display: flex;
             align-items: center;
-            gap: 12px;
-            color: var(--text-muted);
-            font-size: 0.88rem;
-            margin-bottom: 12px;
+            gap: 10px;
         }
 
-        .accomplishments-list i {
+        .skill-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-badge {
+            background-color: rgba(212, 163, 115, 0.15);
+            color: var(--text-light);
+            border: 1px solid rgba(212, 163, 115, 0.4);
+            padding: 6px 14px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        /* Projects Section */
+        .projects-section {
+            background-color: #120b08;
+            padding: 100px 0;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .project-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 35px;
+            height: 100%;
+            transition: 0.3s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .project-card:hover {
+            border-color: var(--accent-gold);
+            transform: translateY(-5px);
+        }
+
+        .project-title {
+            font-size: 1.4rem;
+            color: var(--text-light);
+            margin-bottom: 15px;
+            font-family: var(--font-serif);
+        }
+
+        .project-desc {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            opacity: 0.9;
+            margin-bottom: 25px;
+        }
+
+        /* Timeline / Education & Experience Sections */
+        .timeline-section {
+            background-color: var(--bg-dark);
+            padding: 100px 0;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .timeline-section.alt-bg {
+            background-color: #120b08;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+            border-left: 1px solid var(--border-color);
+            margin-top: 40px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 40px;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: -36px;
+            top: 0;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: var(--accent-gold);
+            box-shadow: 0 0 0 4px var(--bg-dark);
+        }
+
+        .timeline-date {
             color: var(--accent-gold);
-            font-size: 0.9rem;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .timeline-title {
+            font-size: 1.25rem;
+            color: var(--text-light);
+            margin-bottom: 10px;
+        }
+
+        .timeline-desc {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background-color: #120b08;
+            padding: 100px 0;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .contact-box {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 40px;
+            text-align: center;
         }
 
         @media (max-width: 991px) {
             .hero-title { font-size: 2.8rem; }
-            .stat-box { text-align: left; margin-top: 30px; }
-            .hero-img { max-width: 100%; height: 420px; margin: 30px 0; }
         }
     </style>
 </head>
 <body>
 
     <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg">
+    <nav class="navbar navbar-expand-lg fixed-top bg-dark border-bottom border-secondary border-opacity-25" style="backdrop-filter: blur(10px); background-color: rgba(22, 13, 10, 0.95) !important;">
         <div class="container">
-            <a class="navbar-brand" href="#"><i class="fa-solid fa-star me-2"></i></a>
+            <a class="navbar-brand font-serif" href="#"><i class="fa-solid fa-star me-2"></i>DA</a>
             <button class="navbar-toggler navbar-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link active" href="#hero">About Me</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About Me</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
                     <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                 </ul>
             </div>
@@ -316,41 +423,22 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="hero" class="hero-section">
+    <section id="hero" class="hero-section" style="padding-top: 140px;">
         <div class="container">
             <div class="row align-items-center">
                 
-                <!-- Left Content -->
-                <div class="col-lg-5">
-                    <div class="tagline">| DANIELA G. APONESTO |</div>
-                    <h1 class="hero-title">Diploma in <span>Information</span> Technology</h1>
-                    <p class="hero-subtext">Passionate student developer and researcher based in Batangas, focusing on web systems, UI/UX design, and database architecture.</p>
+                <div class="col-lg-10">
+                    <div class="tagline mb-3">| WELCOME TO MY PORTFOLIO |</div>
+                    <h1 class="hero-title">Hello, I'm <span>Daniela G. Aponesto</span></h1>
+                    <p class="hero-subtext">Pursuing a Diploma in Information Technology at Polytechnic University of the Philippines – Sto. Tomas Campus. Exploring full-stack development, database systems, and UI/UX design.</p>
                     
                     <div class="d-flex gap-3 mb-4">
                         <a href="https://github.com/danieaxx" target="_blank" class="btn btn-gold">
                             <i class="fa-brands fa-github me-2"></i>GitHub
                         </a>
-                        <a href="#contact" class="btn btn-outline-gold">Contact Me</a>
-                    </div>
-                </div>
-
-                <!-- Center Profile Image -->
-                <div class="col-lg-4 text-center">
-                    <div class="hero-img-wrapper">
-                        <img src="picniella.png" alt="Daniela G. Aponesto" class="hero-img">
-                    </div>
-                </div>
-
-                <!-- Right Stats Callout -->
-                <div class="col-lg-3">
-                    <div class="stat-box">
-                        <div class="stat-icon"><i class="fa-solid fa-laptop-code"></i></div>
-                        <div class="stat-number">3rd</div>
-                        <div class="stat-label">Year DIT Student</div>
-                    </div>
-                    <div class="stat-box">
-                        <div class="stat-number">300+</div>
-                        <div class="stat-label">Hours OJT Internship</div>
+                        <a href="https://www.facebook.com/share/1CY7v13AxJ/" target="_blank" class="btn btn-outline-gold">
+                            <i class="fa-brands fa-facebook me-2"></i>Facebook
+                        </a>
                     </div>
                 </div>
 
@@ -362,26 +450,26 @@
                     <div class="info-card">
                         <div class="info-icon"><i class="fa-solid fa-envelope"></i></div>
                         <div>
-                            <div class="info-title">Contact Information</div>
-                            <div class="info-detail"><a href="mailto:danieaponesto@gmail.com">danieaponesto@gmail.com</a></div>
+                            <div class="info-title">Email Address</div>
+                            <div class="info-detail"><a href="mailto:danielaaponesto8@gmail.com">danielaaponesto8@gmail.com</a></div>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-md-4 mb-3 mb-md-0">
                     <div class="info-card">
-                        <div class="info-icon"><i class="fa-solid fa-location-dot"></i></div>
+                        <div class="info-icon"><i class="fa-solid fa-phone"></i></div>
                         <div>
-                            <div class="info-title">Location</div>
-                            <div class="info-detail">Batangas, Philippines</div>
+                            <div class="info-title">Contact Number</div>
+                            <div class="info-detail">Upon Request</div>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-md-4 text-md-end social-links">
                     <a href="https://github.com/danieaxx" target="_blank"><i class="fa-brands fa-github"></i></a>
-                    <a href="#" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-                    <a href="#" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/share/1CY7v13AxJ/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="mailto:danielaaponesto8@gmail.com"><i class="fa-solid fa-envelope"></i></a>
                 </div>
             </div>
 
@@ -389,38 +477,233 @@
     </section>
 
     <!-- About Me Section -->
-    <section class="about-section">
+    <section id="about" class="about-section">
         <div class="container">
             <div class="tagline mb-3">| ABOUT ME |</div>
             <div class="row g-5 align-items-center">
                 
-                <div class="col-lg-6">
+                <div class="col-lg-5">
                     <img src="picniella.png" alt="Daniela G. Aponesto" class="about-img">
                 </div>
 
-                <div class="col-lg-6">
-                    <h2 class="about-heading font-serif">I design and develop functional web platforms, database systems, and user-centric digital experiences.</h2>
+                <div class="col-lg-7">
+                    <h2 class="about-heading font-serif">Driven by curiosity and a commitment to crafting impactful digital solutions.</h2>
                     
                     <p class="about-text">
-                        I am currently pursuing a Diploma in Information Technology at Polytechnic University of the Philippines - Sto. Tomas Campus. My academic journey focuses on full-stack web development, relational database mapping, and responsive interface design.
+                        I am a 3rd-year Diploma in Information Technology student at the Polytechnic University of the Philippines – Sto. Tomas Campus. I am deeply passionate about exploring the diverse and dynamic fields of Information Technology, spanning full-stack development, database management, and UI/UX design.
                     </p>
                     
                     <p class="about-text">
-                        Having completed a 300-hour administrative and data-gathering internship at Tanauan City Hall, I combine practical administrative precision with technical development skills to build impactful civic and web technologies.
+                        As a quick learner and highly motivated collaborator, I am dedicated to continuous professional and technical growth. I thrive in team environments, transforming conceptual ideas into efficient web systems, structured databases, and intuitive user experiences.
                     </p>
-
-                    <ul class="accomplishments-list">
-                        <li><i class="fa-solid fa-award"></i> Senior High School Honors — Nova Schola Tanauan (2024)</li>
-                        <li><i class="fa-solid fa-briefcase"></i> 300-Hour OJT — Office of the Liga ng mga Barangay</li>
-                        <li><i class="fa-solid fa-diagram-project"></i> Capstone Lead — Smart Barangay & GraveTrace Systems</li>
-                    </ul>
                 </div>
 
             </div>
         </div>
     </section>
 
-    <footer class="text-center py-4 text-muted small border-top border-secondary border-opacity-25">
+    <!-- Education Section -->
+    <section id="education" class="timeline-section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <div class="tagline mb-2">| ACADEMIC BACKGROUND |</div>
+                <h2 class="font-serif display-6">Education</h2>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="timeline">
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-date">2024 - Present</div>
+                            <h3 class="timeline-title">Polytechnic University of the Philippines - Sto. Tomas Campus</h3>
+                            <p class="text-light small mb-2 opacity-75"><i class="fa-solid fa-graduation-cap me-1" style="color: var(--accent-gold);"></i> Diploma in Information Technology</p>
+                            <p class="timeline-desc">Currently pursuing higher studies focusing on software engineering, web application development, database management systems, and networking.</p>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-date">2022 - 2024</div>
+                            <h3 class="timeline-title">Nova Schola Tanauan INC</h3>
+                            <p class="text-light small mb-2 opacity-75"><i class="fa-solid fa-school me-1" style="color: var(--accent-gold);"></i> Senior High School</p>
+                            <p class="timeline-desc">Completed Senior High School education with honors, developing strong foundational analytical, communication, and technical skills.</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Skills Section -->
+    <section id="skills" class="skills-section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <div class="tagline mb-2">| TECHNICAL EXPERTISE |</div>
+                <h2 class="font-serif display-6">Skills & Capabilities</h2>
+            </div>
+            
+            <div class="row g-4">
+                <!-- Programming -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="skill-card">
+                        <h3><i class="fa-solid fa-code"></i> Programming</h3>
+                        <div class="skill-badges">
+                            <span class="skill-badge">HTML</span>
+                            <span class="skill-badge">CSS</span>
+                            <span class="skill-badge">JS</span>
+                            <span class="skill-badge">Python</span>
+                            <span class="skill-badge">Java</span>
+                            <span class="skill-badge">PHP</span>
+                            <span class="skill-badge">Git</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Database & Management -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="skill-card">
+                        <h3><i class="fa-solid fa-database"></i> Database & Mgmt</h3>
+                        <div class="skill-badges">
+                            <span class="skill-badge">PostgreSQL</span>
+                            <span class="skill-badge">MySQL</span>
+                            <span class="skill-badge">phpMyAdmin</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- IT Infrastructure & Network -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="skill-card">
+                        <h3><i class="fa-solid fa-network-wired"></i> Infrastructure</h3>
+                        <div class="skill-badges">
+                            <span class="skill-badge">Windows Server</span>
+                            <span class="skill-badge">Cisco</span>
+                            <span class="skill-badge">VirtualBox</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Design & AI Analytics -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="skill-card">
+                        <h3><i class="fa-solid fa-palette"></i> Design & Analytics</h3>
+                        <div class="skill-badges">
+                            <span class="skill-badge">Figma</span>
+                            <span class="skill-badge">Canva</span>
+                            <span class="skill-badge">Power BI</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <div class="tagline mb-2">| PORTFOLIO WORKS |</div>
+                <h2 class="font-serif display-6">Featured Projects</h2>
+            </div>
+
+            <div class="row g-4 justify-content-center">
+                <!-- Project 1: A02 -->
+                <div class="col-md-6 col-lg-5">
+                    <div class="project-card">
+                        <div>
+                            <h3 class="project-title"><i class="fa-solid fa-code me-2" style="color: var(--accent-gold);"></i>A02 Web Project</h3>
+                            <p class="project-desc">An interactive web application project showcasing structured layout design, responsive components, and modern web styling principles.</p>
+                        </div>
+                        <div>
+                            <a href="A02/A02.html" target="_blank" class="btn btn-gold btn-sm">
+                                <i class="fa-solid fa-arrow-up-right-from-square me-2"></i>View Project
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: Wizarding World API -->
+                <div class="col-md-6 col-lg-5">
+                    <div class="project-card">
+                        <div>
+                            <h3 class="project-title"><i class="fa-solid fa-wand-magic-sparkles me-2" style="color: var(--accent-gold);"></i>Wizarding World API</h3>
+                            <p class="project-desc">A dynamic web application built with Bootstrap and JavaScript, integrating API data to explore spells, characters, and lore from the Wizarding World universe.</p>
+                        </div>
+                        <div>
+                            <a href="midterm/wizarding-world.html" target="_blank" class="btn btn-gold btn-sm">
+                                <i class="fa-solid fa-arrow-up-right-from-square me-2"></i>View Project
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="timeline-section alt-bg">
+        <div class="container">
+            <div class="text-center mb-5">
+                <div class="tagline mb-2">| PROFESSIONAL BACKGROUND |</div>
+                <h2 class="font-serif display-6">Experience & Training</h2>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="timeline">
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-date">July 2026 - September 2026</div>
+                            <h3 class="timeline-title">OJT Intern — Tanauan City Hall</h3>
+                            <p class="text-light small mb-2 opacity-75"><i class="fa-solid fa-location-dot me-1" style="color: var(--accent-gold);"></i> Office of the Liga ng mga Barangay (ABC) | Tanauan City, Batangas</p>
+                            <p class="timeline-desc">Completed a 300-hour hands-on internship focusing on administrative operations, records management, data processing, and assisting municipal public service workflows.</p>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-date">February 2024 - March 2024</div>
+                            <h3 class="timeline-title">Work Immersion Program (Student Assistant Teacher)</h3>
+                            <p class="text-light small mb-2 opacity-75"><i class="fa-solid fa-location-dot me-1" style="color: var(--accent-gold);"></i> Nova Schola Tanauan</p>
+                            <p class="timeline-desc">Assisted faculty members with instructional support, classroom organization, mentoring students, and supporting academic administrative tasks during senior high school work immersion.</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="contact-box">
+                        <div class="tagline mb-2">| GET IN TOUCH |</div>
+                        <h2 class="font-serif mb-4">Let's Connect</h2>
+                        <p class="text-light mb-4 opacity-90">Whether you have a project in mind, want to collaborate, or just want to say hi, feel free to reach out through any of the channels below!</p>
+                        
+                        <div class="d-flex flex-wrap justify-content-center gap-4">
+                            <a href="mailto:danielaaponesto8@gmail.com" class="btn btn-gold">
+                                <i class="fa-solid fa-envelope me-2"></i>Email Me
+                            </a>
+                            <a href="https://www.facebook.com/share/1CY7v13AxJ/" target="_blank" class="btn btn-outline-gold">
+                                <i class="fa-brands fa-facebook me-2"></i>Facebook
+                            </a>
+                            <a href="https://github.com/danieaxx" target="_blank" class="btn btn-outline-gold">
+                                <i class="fa-brands fa-github me-2"></i>GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="text-center py-4 text-light small border-top border-secondary border-opacity-25 opacity-75" style="background-color: var(--bg-dark);">
         <p class="mb-0">&copy; 2026 Daniela G. Aponesto. Built with HTML & Bootstrap 5.</p>
     </footer>
 
